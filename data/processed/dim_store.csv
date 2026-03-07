@@ -1,0 +1,26 @@
+store_id,store_name,region,city,opened_date
+S001,ShopSmart Soweto 1,Gauteng,Soweto,2023-02-05
+S002,ShopSmart Nelspruit 2,Mpumalanga,Nelspruit,2016-07-05
+S003,ShopSmart Polokwane 3,Limpopo,Polokwane,2022-11-11
+S004,ShopSmart Gqeberha 4,Eastern Cape,Gqeberha,2022-08-13
+S005,ShopSmart East London 5,Eastern Cape,East London,2018-03-19
+S006,ShopSmart Rustenburg 6,North West,Rustenburg,2021-01-18
+S007,ShopSmart Soweto 7,Gauteng,Soweto,2017-04-27
+S008,ShopSmart Nelspruit 8,Mpumalanga,Nelspruit,2022-01-22
+S009,ShopSmart Stellenbosch 9,Western Cape,Stellenbosch,2021-08-07
+S010,ShopSmart Pretoria 10,Gauteng,Pretoria,2018-11-01
+S011,ShopSmart Bloemfontein 11,Free State,Bloemfontein,2016-07-17
+S012,ShopSmart Kimberley 12,Northern Cape,Kimberley,2023-10-05
+S013,ShopSmart Nelspruit 13,Mpumalanga,Nelspruit,2019-07-25
+S014,ShopSmart Nelspruit 14,Mpumalanga,Nelspruit,2023-02-20
+S015,ShopSmart Nelspruit 15,Mpumalanga,Nelspruit,2021-06-02
+S016,ShopSmart Rustenburg 16,North West,Rustenburg,2022-03-22
+S017,ShopSmart Bloemfontein 17,Free State,Bloemfontein,2022-01-27
+S018,ShopSmart Cape Town 18,Western Cape,Cape Town,2017-07-22
+S019,ShopSmart Rustenburg 19,North West,Rustenburg,2018-11-28
+S020,ShopSmart Bloemfontein 20,Free State,Bloemfontein,2019-09-24
+S021,ShopSmart Bloemfontein 21,Free State,Bloemfontein,2019-12-24
+S022,ShopSmart Gqeberha 22,Eastern Cape,Gqeberha,2016-05-07
+S023,ShopSmart Stellenbosch 23,Western Cape,Stellenbosch,2020-05-14
+S024,ShopSmart Kimberley 24,Northern Cape,Kimberley,2017-03-26
+S025,ShopSmart Rustenburg 25,North West,Rustenburg,2021-12-10
