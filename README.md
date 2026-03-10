@@ -87,7 +87,7 @@ Raw Data Sources (CSV / SQL) ↓ Python ETL Layer (Pandas / NumPy) ↓ Data Vali
 
 * Industry best practice for OLAP workloads
 
----
+***
 
 ## 3. Data Extraction Layer
 
@@ -97,12 +97,167 @@ CSV simulates data exported from operational system (POS, ERP).
 
 #### Engineering Considerations:
 
-- Encoding consistancy
-- Schema validation
-- Handling malformed rows
-- Data type inference control
+* Encoding consistancy
 
-### 3.2 More Extraction Sources [to be implemented]
+* Schema validation
+
+* Handling malformed rows
+
+* Data type inference control
+
+### 3.2 More Extraction Sources \[to be implemented]
+
+***
+
+## 4. Data Tranformation Layer (ETL core)
+
+### 4.1 Data Cleaning
+
+Key operations:
+
+* Remove Duplicates
+
+* Handle nulls
+
+* Enforce schema cosnistency
+
+* Ntandardize naming conventions
+
+* Convert data types
+
+### 4.2 Data Validation
+
+Validation checks include:
+
+* Negative quantity detection
+
+* Null foreign keys
+
+* Outlier revenue detection
+
+* Referential integrity validation
+
+Example:
+
+`assert transactions["qty"].min() >= 0`
+
+### 4.3 Feature Engineering
+
+Creation of the Revenue column (Number of items multiplied by the items unit price).
+
+### 4.4 Dimensional Modeling Construction
+
+**Dimension Tables:**
+
+1. DimStore
+2. DimProduct
+3. DimCustomer
+4. **FactSales**: captures measurable events.
+
+***
+
+## 5. Data Warehouse Implementation (SQL Server)
+
+### 5.1 Database Creation
+
+`CREATE DATABASE ShopSmartDW`
+
+### 5.2 Table Creation
+
+Foreign key constraints are added to enforce referential integrity.
+
+Example:
+
+```
+CREATE TABLE dbo.FactSales (
+    txn_id INT PRIMARY KEY,
+    store_id INT NOT NULL,
+    product_id INT NOT NULL,
+    cust_id INT NOT NULL,
+    qty INT,
+    revenue DECIMAL(18,2),
+    date DATE,
+    month VARCHAR(7)
+);
+```
+
+### 5.3 Indexing Strategy
 
 ---
 
+## 6. Data Loading Strategy
+
+---
+
+## 7. BI Integration (Power BI)
+
+### Connection Setup
+
+1. Server: (localdb)\MSSQLLocalDB
+
+2. Database: ShopSmartDW
+
+3. Authentication: Windows
+
+4. Mode: Import
+
+### Data Model
+
+Star schema with:
+
+FactSales → DimStore FactSales → DimProduct FactSales → DimCustomer
+
+Cardinality: Many-to-One
+
+### Core Business Measures (DAX)
+
+```
+Total Revenue = SUM(FactSales[revenue])
+Total Units = SUM(FactSales[qty])
+Total Transactions = COUNT(FactSales[txn_id])
+Avg Order Value = DIVIDE([Total Revenue], [Total Transactions])
+```
+
+---
+
+## 8. Project Folder Structure
+
+```
+shopsmart_pipeline/
+│
+├── data/                # Raw CSV files
+├── etl.py               # Transformation logic
+├── load_to_sql.py       # Warehouse loading script
+├── requirements.txt     # Dependencies
+└── README.md
+```
+
+---
+
+## 9. Scalability Roadmap
+
+- To improve this project, the following can be done:
+
+- Add logging framework (logging module)
+
+- Implement incremental loads
+
+- Add configuration file (.env)
+
+- Containerize with Docker
+
+- Deploy SQL to Azure SQL
+
+- Automate with Airflow or Prefect
+
+- Implement data quality checks
+
+- Add CI/CD pipeline
+
+---
+
+# **CONCLUSION**
+
+## This project demonstrates a complete, production-style analytics pipeline. It reflects practical data engineering skills beyond basic data analysis by emphasizing architecture, modeling, optimization, and integration.
+
+## It showcases readiness for mid-level data engineering roles involving warehouse development, ETL design, and BI enablement.
