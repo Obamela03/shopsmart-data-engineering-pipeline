@@ -183,11 +183,11 @@ CREATE TABLE dbo.FactSales (
 
 ### 5.3 Indexing Strategy
 
----
+***
 
 ## 6. Data Loading Strategy
 
----
+***
 
 ## 7. BI Integration (Power BI)
 
@@ -218,7 +218,7 @@ Total Transactions = COUNT(FactSales[txn_id])
 Avg Order Value = DIVIDE([Total Revenue], [Total Transactions])
 ```
 
----
+***
 
 ## 8. Project Folder Structure
 
@@ -232,32 +232,32 @@ shopsmart_pipeline/
 └── README.md
 ```
 
----
+***
 
 ## 9. Scalability Roadmap
 
-- To improve this project, the following can be done:
+* To improve this project, the following can be done:
 
-- Add logging framework (logging module)
+* Add logging framework (logging module)
 
-- Implement incremental loads
+* Implement incremental loads
 
-- Add configuration file (.env)
+* Add configuration file (.env)
 
-- Containerize with Docker
+* Containerize with Docker
 
-- Deploy SQL to Azure SQL
+* Deploy SQL to Azure SQL
 
-- Automate with Airflow or Prefect
+* Automate with Airflow or Prefect
 
-- Implement data quality checks
+* Implement data quality checks
 
-- Add CI/CD pipeline
+* Add CI/CD pipeline
 
----
+***
 
 # **CONCLUSION**
 
-## This project demonstrates a complete, production-style analytics pipeline. It reflects practical data engineering skills beyond basic data analysis by emphasizing architecture, modeling, optimization, and integration.
+This project demonstrates a complete, production-style analytics pipeline. It reflects practical data engineering skills beyond basic data analysis by emphasizing architecture, modeling, optimization, and integration.
 
-## It showcases readiness for mid-level data engineering roles involving warehouse development, ETL design, and BI enablement.
+It showcases readiness for roles involving warehouse development, ETL design, and BI enablement.
